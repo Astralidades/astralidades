@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astralidades - Em Breve</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(ellipse at bottom, #2d0b3c 0%, #0a0a0a 100%);
+    }
+
+    /* Estrelas animadas */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .symbol {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffb6c1, 0 0 20px #e75480; }
+      to { text-shadow: 0 0 20px #ffd1dc, 0 0 40px #ff69b4; }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fundo estrelado -->
+  <div class="stars"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="symbol">✦ ✧ ✦</div>
+  <h1>Astralidades</h1>
+  <p>Umbanda • Sagrado Feminino • Espiritualidade</p>
+  <p><strong>Nosso portal está chegando em breve...</strong></p>
+
+  <footer>
+    © 2025 Astralidades • Conectando espiritualidade e sabedoria ancestral
+  </footer>
+
+  <!-- Script para gerar estrelas aleatórias -->
+  <script>
+    const starsContainer = document.querySelector('.stars');
+    const numStars = 100;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 3}s`;
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
